@@ -25,32 +25,34 @@ function App() {
 
   return (
     <div className='mainDiv'>
+      <div>
       <h1 className='meme-header'>Meme Generator</h1>
 
-      {memeImage && (
-        <div style={{ position: 'relative', display: 'inline-block' }}>
-          <img src={memeImage.url} alt={memeImage.name} width="300" />
-          <h2 className='head1'>{topText}</h2>
-          <h2 className='head2'>{bottomText}</h2>
+{memeImage && (
+  <div className='mememe'>
+    <img src={memeImage.url} alt={memeImage.name} width="300" />
+    <h2 className='head1'>{topText}</h2>
+    <h2 className='head2'>{bottomText}</h2>
 
-          <div>
-            <input
-              className='btn2'
-              type="text"
-              placeholder="Top Text"
-              value={topText}
-              onChange={(e) => setTopText(e.target.value)}
-            />
-            <input
-              className='btn2'
-              type="text"
-              placeholder="Bottom Text"
-              value={bottomText}
-              onChange={(e) => setBottomText(e.target.value)}
-            />
-          </div>
-        </div>
-      )}
+    <div>
+      <input
+        className='btn2'
+        type="text"
+        placeholder="Top Text"
+        value={topText}
+        onChange={(e) => setTopText(e.target.value)}
+      />
+      <input
+        className='btn2'
+        type="text"
+        placeholder="Bottom Text"
+        value={bottomText}
+        onChange={(e) => setBottomText(e.target.value)}
+      />
+    </div>
+  </div>
+)}
+      </div>
 
       <button className='btn1' onClick={generateMeme}>Generate Meme</button>
 
